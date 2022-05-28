@@ -1,0 +1,6 @@
+LCD_HD44780.o LCD_HD44780.o: ../LCD_HD44780.cpp ../LCD_HD44780.h \
+  ../GLOBAL.h
+
+../LCD_HD44780.h:
+
+../GLOBAL.h:

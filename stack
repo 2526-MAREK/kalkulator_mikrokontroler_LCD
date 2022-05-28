@@ -1,0 +1,47 @@
+#ifndef STACK_
+#define STACK_
+
+//ta wartosæ nie mo¿e pojawiæ siê jako element stosu
+#define ERROR 1000000000
+//maksymalna wielkosæ stosu
+#define MAX 10
+
+int tab[MAX],  //tablica na stos
+i = 0; //zmienna wskazuj¹ca komórkê tablicy, w której jest wierzcho³ek stosu
+
+inline bool push(int element)
+{
+  if(i>=MAX) return 0; //gdy nie ma miejsca na stosie
+
+  tab[i++] = element;
+  return 1;
+}
+
+inline int pop()
+{
+  if(i==0) return ERROR; //gdy nie ma co usuwaæ
+
+  --i;
+  return 1; //uda³o siê usun¹æ
+}
+
+inline bool empty()
+{
+  if(i==0) return 1; //gdy stos jest pusty
+
+  return 0; //gdy s¹ elementy na stosie
+}
+
+inline unsigned int size()
+{
+  return i; //zwrócenie liczby elementów stosu
+}
+
+inline int value()
+{
+  if(i==0) return ERROR; //gdy stos jest pusty
+
+  return tab[i-1];
+}
+
+#endif
